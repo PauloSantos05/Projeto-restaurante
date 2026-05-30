@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Yuan — Cadastro</title>
+  <link rel="stylesheet" href="style.css" />
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;500;600&family=Lato:wght@300;400&display=swap" rel="stylesheet" />
+  <link rel="icon" href="dragon.png">
+  
+
+</head>
+<body>
+
+  <!-- Decorative background bamboo/plant illustration -->
+  <div class="bg-decor bg-decor--left"></div>
+  <div class="bg-decor bg-decor--right"></div>
+
+  <main class="page">
+    <div class="card">
+
+      <!-- Logo -->
+      <div class="logo" aria-label="Yuan">
+        <span class="logo__part logo__part--green">YU</span>
+        <span class="logo__icon" aria-hidden="true">
+          <svg width="32" height="32" viewBox="0 0 32 32" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <circle cx="16" cy="16" r="13" stroke="#C8A84B" stroke-width="1.5"/>
+            <circle cx="16" cy="16" r="7"  stroke="#C8A84B" stroke-width="1.5"/>
+            <circle cx="16" cy="16" r="2"  fill="#C8A84B"/>
+          </svg>
+        </span>
+        <span class="logo__part logo__part--green">AN</span>
+      </div>
+
+      <!-- Divider line -->
+      <div class="logo__line" aria-hidden="true"></div>
+
+      <!-- Subtitle -->
+      <p class="subtitle">Crie sua conta</p>
+
+      <!-- Form -->
+      <form class="form" id="loginForm" novalidate>
+
+        <div class="field" id="fieldNome">
+          <input
+            class="field__input"
+            type="text"
+            id="nome"
+            name="nome"
+            placeholder="Nome Completo"
+            autocomplete="nome"
+            required
+          />
+          <span class="field__error" id="nomeError" role="alert"></span>
+        </div>
+
+        <div class="field" id="fieldEmail">
+          <input
+            class="field__input"
+            type="email"
+            id="email"
+            name="email"
+            placeholder="Email"
+            autocomplete="email"
+            required
+          />
+          <span class="field__error" id="emailError" role="alert"></span>
+        </div>
+
+        <div class="field" id="fieldTelefone">
+          <input
+            class="field__input"
+            type="text"
+            id="telefone"
+            name="telefone"
+            placeholder="Telefone"
+            autocomplete="telefone"
+            required
+          />
+          <span class="field__error" id="telefoneError" role="alert"></span>
+        </div>
+
+        <div class="field" id="fieldSenha">
+          <input
+            class="field__input"
+            type="password"
+            id="senha"
+            name="senha"
+            placeholder="Senha"
+            autocomplete="current-password"
+            required
+          />
+          <button
+            type="button"
+            class="field__toggle"
+            id="toggleSenha"
+            aria-label="Mostrar senha"
+            aria-pressed="false"
+          >
+
+          <!-- Eye icon -->
+                 
+          <svg class="icon-eye" id="iconEye"  width="20" height="20" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/>
+            <circle cx="12" cy="12" r="3" stroke="currentColor" stroke-width="1.6"/>
+          </svg>
+          <!-- Eye-off icon (hidden by default) -->
+          <svg class="icon-eye-off hidden" id="iconEyeOff" width="20" height="20" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <path d="M17.94 17.94A10.07 10.07 0 0 1 12 20c-7 0-11-8-11-8a18.45 18.45 0 0 1 5.06-5.94" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/>
+            <path d="M9.9 4.24A9.12 9.12 0 0 1 12 4c7 0 11 8 11 8a18.5 18.5 0 0 1-2.16 3.19" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/>
+            <path d="M1 1l22 22" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"/>
+          </svg>
+          
+          </button>
+          <span class="field__error" id="senhaError" role="alert"></span>
+        </div>
+
+        <!-- <a href="#" class="forgot-link">Esqueci minha senha</a> -->
+
+        <button type="submit" class="btn-entrar" id="btnEntrar">
+          <span class="btn-entrar__text">Cadastrar</span>
+          <span class="btn-entrar__loader" aria-hidden="true"></span>
+        </button>
+
+      </form>
+
+      <p class="register-line">
+        Já possui uma conta?
+        <a href="login.html" class="register-link">Faça login</a>
+      </p>
+
+    </div>
+  </main>
+
+  <script src="cadastro.js"></script>
+</body>
+</html>

@@ -1,0 +1,196 @@
+/* ============================================================
+   YUAN — Login Page Styles
+   ============================================================ */
+
+/* ---------- Reset & Base ---------- */
+*, *::before, *::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+:root {
+  /* Palette */
+  --color-bg:          #F0EDE6;
+  --color-card-bg:     #F5F2EC;
+  --color-surface:     #FDFAF5;
+  --color-border:      #E4DFCF;
+  --color-shadow:      rgba(100, 85, 60, 0.08);
+
+  --color-logo-green:  #7A9E82;
+  --color-gold:        #C8A84B;
+  --color-text:        #4A4438;
+  --color-muted:       #9A9180;
+  --color-forgot:      #7A9E82;
+  --color-register:    #7A9E82;
+
+  --color-btn-bg:      #7B2D3A;
+  --color-btn-hover:   #6A2533;
+  --color-btn-text:    #FFFFFF;
+
+  --color-error:       #B94040;
+  --color-focus-ring:  rgba(122, 158, 130, 0.35);
+
+  /* Typography */
+  --font-display: 'Cormorant Garamond', Georgia, serif;
+  --font-body:    'Lato', sans-serif;
+
+  /* Spacing */
+  --radius-input: 14px;
+  --radius-btn:   14px;
+}
+
+html, body {
+  height: 100%;
+}
+
+body {
+  background-color: var(--color-bg);
+  font-family: var(--font-body);
+  color: var(--color-text);
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+  overflow: hidden;
+}
+
+/* ---------- Background Decorative Elements ---------- */
+.bg-decor {
+  position: fixed;
+  bottom: 0;
+  width: 180px;
+  height: 420px;
+  pointer-events: none;
+  opacity: 0.18;
+  background-repeat: no-repeat;
+  background-size: contain;
+}
+
+/* ---------- Page / Card ---------- */
+.page {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  min-height: 100vh;
+  padding: 24px;
+  z-index: 1;
+}
+
+.card {
+  width: 100%;
+  max-width: 440px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  animation: cardReveal 0.7s cubic-bezier(0.22, 1, 0.36, 1) both;
+}
+
+@keyframes cardReveal {
+  from { opacity: 0; transform: translateY(22px); }
+  to   { opacity: 1; transform: translateY(0); }
+}
+
+/* ---------- Logo ---------- */
+.logo {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  margin-bottom: 12px;
+  animation: fadeDown 0.6s 0.1s cubic-bezier(0.22, 1, 0.36, 1) both;
+}
+
+.logo__part {
+  font-family: var(--font-display);
+  font-size: 4rem;
+  font-weight: 700;
+  letter-spacing: 0.18em;
+  color: var(--color-logo-green);
+  line-height: 1;
+}
+
+.logo__icon {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.logo__line {
+  width: 100%;
+  max-width: 380px;
+  height: 1.5px;
+  background: linear-gradient(90deg, transparent 0%, var(--color-gold) 30%, var(--color-gold) 70%, transparent 100%);
+  margin-bottom: 14px;
+  animation: lineReveal 0.7s 0.7s cubic-bezier(0.22, 1, 0.36, 1) infinite alternate;
+}
+
+@keyframes lineReveal {
+  from { opacity: 0.8; transform: scaleX(0.5); }
+  to   { opacity: 1; transform: scaleX(1.5); }
+}
+
+/* ---------- Subtitle ---------- */
+.subtitle {
+  font-family: var(--font-body);
+  font-size: 1rem;
+  font-weight: 300;
+  letter-spacing: 0.03em;
+  color: var(--color-muted);
+  margin-bottom: 32px;
+  animation: fadeDown 0.6s 0.2s cubic-bezier(0.22, 1, 0.36, 1) both;
+}
+
+@keyframes fadeDown {
+  from { opacity: 0; transform: translateY(-10px); }
+  to   { opacity: 1; transform: translateY(0); }
+}
+
+/* ---------- Register line ---------- */
+.register-line {
+  margin-top: 26px;
+  font-size: 0.85rem;
+  font-weight: 300;
+  color: var(--color-muted);
+  animation: fadeUp 0.6s 0.6s cubic-bezier(0.22, 1, 0.36, 1) both;
+}
+
+.register-link {
+  color: var(--color-register);
+  text-decoration: none;
+  font-weight: 400;
+  position: relative;
+  transition: color 0.2s;
+}
+
+.register-link::after {
+  content: '';
+  position: absolute;
+  bottom: -1px;
+  left: 0;
+  width: 0;
+  height: 1px;
+  background: var(--color-register);
+  transition: width 0.25s ease;
+}
+
+.register-link:hover::after { width: 100%; }
+
+/* ---------- Utility ---------- */
+.hidden {
+  display: none !important;
+}
+
+/* Remove o ícone de olho nativo do Edge e do Internet Explorer */
+input[type="password"]::-ms-reveal {
+    display: none !important;
+}
+
+/* ---------- Responsive ---------- */
+@media (max-width: 480px) {
+  .logo__part { font-size: 2rem; }
+  .logo__icon svg { width: 26px; height: 26px; }
+  .field__input { padding: 15px 18px; }
+  .btn-entrar { padding: 16px; }
+}
