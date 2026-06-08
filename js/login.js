@@ -159,12 +159,6 @@
     }, 1800);
   });
 
-  /* ── Forgot password ── */
-  document.querySelector('.forgot-link').addEventListener('click', function (e) {
-    e.preventDefault();
-    alert('Recurso de recuperação de senha em breve.');
-  });
-
   // /* ── Cadastre-se ── */
   // document.querySelector('.register-link').addEventListener('click', function (e) {
   //   e.preventDefault();
