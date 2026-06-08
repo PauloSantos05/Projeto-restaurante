@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Yuan — Esqueci minha senha</title>
+  <link rel="stylesheet" href="css/style.css" />
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;500;600&family=Lato:wght@300;400&display=swap" rel="stylesheet" />
+  <link rel="icon" href="images/dragon.png">
+  
+</head>
+<body>
+
+  <!-- Decorative background bamboo/plant illustration -->
+  <div class="bg-decor bg-decor--left"></div>
+  <div class="bg-decor bg-decor--right"></div>
+
+  <main class="page">
+    <div class="card">
+
+      <!-- Logo -->
+      <div class="logo" aria-label="Yuan">
+        <span style="font-size: 2.2rem;" class="logo__part logo__part--green">Esqueci minha senha</span>
+      </div>
+
+      <!-- Divider line -->
+      <div class="logo__line" aria-hidden="true"></div>
+
+      <!-- Subtitle -->
+      <p class="subtitle">Insira seu email para redefinir a senha</p>
+
+      <!-- Form -->
+      <form class="form" id="loginForm" novalidate>
+
+        <div class="field" id="fieldEmail">
+          <input
+            class="field__input"
+            type="email"
+            id="email"
+            name="email"
+            placeholder="Email"
+            autocomplete="email"
+            required
+          />
+          <span class="field__error" id="emailError" role="alert"></span>
+        </div>
+
+        <a href="login.html" class="forgot-link">Voltar ao login</a>
+
+        <button type="submit" class="btn-entrar" id="btnEntrar">
+          <span class="btn-entrar__text">Enviar link</span>
+          <span class="btn-entrar__loader" aria-hidden="true"></span>
+        </button>
+
+      </form>
+
+    </div>
+  </main>
+
+  <script src="js/senha-esquecida.js"></script>
+</body>
+</html>
