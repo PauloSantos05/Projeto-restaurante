@@ -20,73 +20,39 @@
 
       <!-- Logo -->
       <div class="logo" aria-label="Yuan">
-        <span class="logo__part logo__part--green">YU</span>
-        <span class="logo__icon" aria-hidden="true">
-          <svg width="32" height="32" viewBox="0 0 32 32" fill="none" xmlns="http://www.w3.org/2000/svg">
-            <circle cx="16" cy="16" r="13" stroke="#C8A84B" stroke-width="1.5"/>
-            <circle cx="16" cy="16" r="7"  stroke="#C8A84B" stroke-width="1.5"/>
-            <circle cx="16" cy="16" r="2"  fill="#C8A84B"/>
-          </svg>
-        </span>
-        <span class="logo__part logo__part--green">AN</span>
+        <span style="font-size: 2.2rem;" class="logo__part logo__part--green">Esqueci minha senha</span>
       </div>
 
       <!-- Divider line -->
       <div class="logo__line" aria-hidden="true"></div>
 
       <!-- Subtitle -->
-      <p class="subtitle">Bem-vindo de volta</p>
+      <p class="subtitle">Insira seu email para redefinir a senha</p>
 
       <!-- Form -->
       <form class="form" id="loginForm" novalidate>
 
-        <div class="field" id="fieldSenha">
+        <div class="field" id="fieldEmail">
           <input
             class="field__input"
-            type="password"
-            id="senha"
-            name="senha"
-            placeholder="Senha"
-            autocomplete="current-password"
+            type="email"
+            id="email"
+            name="email"
+            placeholder="Email"
+            autocomplete="email"
             required
           />
-          <button
-            type="button"
-            class="field__toggle"
-            id="toggleSenha"
-            aria-label="Mostrar senha"
-            aria-pressed="false"
-          >
-
-          <!-- Eye icon -->
-          <svg class="icon-eye" id="iconEye"  width="20" height="20" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-            <path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/>
-            <circle cx="12" cy="12" r="3" stroke="currentColor" stroke-width="1.6"/>
-          </svg>
-          <!-- Eye-off icon (hidden by default) -->
-          <svg class="icon-eye-off hidden" id="iconEyeOff" width="20" height="20" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-            <path d="M17.94 17.94A10.07 10.07 0 0 1 12 20c-7 0-11-8-11-8a18.45 18.45 0 0 1 5.06-5.94" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/>
-            <path d="M9.9 4.24A9.12 9.12 0 0 1 12 4c7 0 11 8 11 8a18.5 18.5 0 0 1-2.16 3.19" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/>
-            <path d="M1 1l22 22" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"/>
-          </svg>
-
-          </button>
-          <span class="field__error" id="senhaError" role="alert"></span>
+          <span class="field__error" id="emailError" role="alert"></span>
         </div>
 
-        <a href="#" class="forgot-link">Esqueci minha senha</a>
+        <a href="login.html" class="forgot-link">Voltar ao login</a>
 
         <button type="submit" class="btn-entrar" id="btnEntrar">
-          <span class="btn-entrar__text">Entrar</span>
+          <span class="btn-entrar__text">Enviar link</span>
           <span class="btn-entrar__loader" aria-hidden="true"></span>
         </button>
 
       </form>
-
-      <p class="register-line">
-        Ainda não tem conta?
-        <a href="cadastro.html" class="register-link">Cadastre-se</a>
-      </p>
 
     </div>
   </main>
