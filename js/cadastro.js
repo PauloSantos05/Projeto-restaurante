@@ -245,17 +245,21 @@
       return;
     }
 
-    /* Simulate async login */
-    btnEntrar.classList.add('loading');
-    btnEntrar.disabled = true;
-
-    setTimeout(() => {
+    fetch('/api/cadastro', {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/json' },
+      body: JSON.stringify({ nome: nomeVal, email: emailVal, telefone: telefoneVal, senha: senhaVal })
+    })
+    .then(r => r.json())
+    .then(data => {
       btnEntrar.classList.remove('loading');
       btnEntrar.disabled = false;
-
-      /* ── Replace this block with real authentication logic ── */
-      alert(`Login realizado com sucesso!\n\nE-mail: ${emailVal}`);
-    }, 1800);
+      if (data.erro) {
+        setFieldError(fieldEmail, emailError, data.erro);
+      } else {
+        window.location.href = 'home.html';
+      }
+    });
   });
 
   /* ── Forgot password ── */
